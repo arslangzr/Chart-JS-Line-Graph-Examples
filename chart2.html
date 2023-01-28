@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+</head>
+
+<body>
+  <canvas id="myChart"></canvas>
+  <script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var chart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ["Jan 2023", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan 2024"],
+        datasets: [{
+          label: 'My Line Chart',
+          data: [5, 7, 5, 15, 25, 40, 35, 60, 65, 69],
+          spanGaps: false,
+          fill: false,
+          borderColor: '#e976af',
+          backgroundColor: '#e976af',
+          borderWidth: 2,
+          tension: 0,
+          pointBackgroundColor: '#f31f86',
+          pointBorderColor: '#f31f86',
+          pointHoverBackgroundColor: '#f31f86',
+          pointHoverBorderColor: '#f31f86',
+          pointRadius: 4,
+          pointHoverRadius: 4
+        }]
+      },
+      options: {
+        legend: {
+          display: false
+        },
+        scales: {
+          xAxes: [{
+            display: true,
+            scaleLabel: {
+              display: true,
+              // labelString: 'Month'
+            },
+            gridLines: {
+              display: false
+            }
+          }],
+          yAxes: [{
+            display: true,
+            ticks: {
+              beginAtZero: true,
+              stepSize: 50,
+              max: 100,
+              min: 0
+            }
+          }]
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
